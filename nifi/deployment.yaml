@@ -26,10 +26,15 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 8443
-        volumeMounts:
-        - name: config
-          mountPath: "/opt/nifi/nifi-current/conf"
-          readOnly: true
+        env:
+        - name: NIFI_WEB_HTTP_HOST
+          value: "10.10.10.106"
+        - name: NIFI_WEB_HTTPS_PORT
+          value: "8443"
+        # volumeMounts:
+        # - name: config
+        #   mountPath: "/opt/nifi/nifi-current/conf"
+        #   readOnly: true
       volumes:
       # You set volumes at the Pod level, then mount them into containers inside that Pod
       - name: config

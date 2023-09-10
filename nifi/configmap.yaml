@@ -149,14 +149,14 @@ data:
     # Be aware that changing these properties may affect how your instance can be accessed without any restriction.
     # We recommend configuring HTTPS instead. The administrators guide provides instructions on how to do this.
 
-    nifi.web.http.host=10.10.10.106
+    nifi.web.http.host="10.10.10.106"
     nifi.web.http.port=8081
     nifi.web.http.network.interface.default=
 
     #############################################
 
     #nifi.web.https.host=nifi-deployment-c6c5569fd-mcb7s
-    nifi.web.https.host=10.10.10.106
+    nifi.web.https.host="10.10.10.106"
     nifi.web.https.port=8443
     nifi.web.https.network.interface.default=
     nifi.web.https.application.protocols=http/1.1
