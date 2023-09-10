@@ -27,10 +27,8 @@ spec:
         ports:
         - containerPort: 8443
         env:
-        - name: NIFI_WEB_HTTPS_HOST
+        - name: NIFI_WEB_PROXY_HOST
           value: "10.10.10.106"
-        - name: NIFI_WEB_HTTPS_PORT
-          value: "8443"
         # volumeMounts:
         # - name: config
         #   mountPath: "/opt/nifi/nifi-current/conf"
