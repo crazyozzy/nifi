@@ -8,10 +8,17 @@ spec:
     app: nifi
   ports:
       # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
-    - name: nifi-http
+    - name: nifi-https
       port: 8443
       targetPort: 8443
       # Optional field
       # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
       nodePort: 30443
+      protocol: TCP
+    - name: nifi-https
+      port: 8081
+      targetPort: 8081
+      # Optional field
+      # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
+      nodePort: 30081
       protocol: TCP
