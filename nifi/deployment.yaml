@@ -36,3 +36,6 @@ spec:
         configMap:
           # Provide the name of the ConfigMap you want to mount.
           name: nifi.properties
+          items:
+          - key: "nifi.properties"
+            path: "nifi.properties"
