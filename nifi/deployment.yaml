@@ -28,17 +28,17 @@ spec:
         - containerPort: 8443
         env:
         - name: NIFI_WEB_PROXY_HOST
-          value: "10.10.10.106"
+          value: "10.10.10.106:30443"
         # volumeMounts:
         # - name: config
         #   mountPath: "/opt/nifi/nifi-current/conf"
         #   readOnly: true
-      volumes:
-      # You set volumes at the Pod level, then mount them into containers inside that Pod
-      - name: config
-        configMap:
-          # Provide the name of the ConfigMap you want to mount.
-          name: nifi-properties
-          items:
-          - key: "nifi.properties"
-            path: "nifi.properties"
+      # volumes:
+      # # You set volumes at the Pod level, then mount them into containers inside that Pod
+      # - name: config
+      #   configMap:
+      #     # Provide the name of the ConfigMap you want to mount.
+      #     name: nifi-properties
+      #     items:
+      #     - key: "nifi.properties"
+      #       path: "nifi.properties"
