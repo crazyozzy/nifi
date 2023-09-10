@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-zk
+  labels:
+    app: zk
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zk
+  template:
+    metadata:
+      labels:
+        app: zk
+    spec:
+      containers:
+      - name: zk
+        image: apache/nifi@sha256:387071e317ab38f66b8b09b64c44cf1279080977ad1a61efb86545e6d142995d
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Gi"
+            cpu: "500m"
+        ports:
+          - containerPort: 8443
+        envFrom:
+          - configMapRef:
+            name: configmap-zk
+            optional: false

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-nifi
+data:
+  NIFI_WEB_PROXY_HOST: "10.10.10.106:30443"
+  SINGLE_USER_CREDENTIALS_USERNAME: "user"
+  SINGLE_USER_CREDENTIALS_PASSWORD: "12345678"
+  

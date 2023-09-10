@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nifi-deployment
+  name: deployment-nifi
   labels:
     app: nifi
 spec:
@@ -25,10 +25,11 @@ spec:
             memory: "1Gi"
             cpu: "500m"
         ports:
-        - containerPort: 8443
-        env:
-        - name: NIFI_WEB_PROXY_HOST
-          value: "10.10.10.106:30443"
+          - containerPort: 8443
+        envFrom:
+          - configMapRef:
+            name: configmap-nifi
+            optional: false
         # volumeMounts:
         # - name: config
         #   mountPath: "/opt/nifi/nifi-current/conf"
