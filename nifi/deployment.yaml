@@ -18,4 +18,4 @@ spec:
       - name: nifi
         image: apache/nifi@sha256:387071e317ab38f66b8b09b64c44cf1279080977ad1a61efb86545e6d142995d
         ports:
-        - containerPort: 80
+        - containerPort: 8443
